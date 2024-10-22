@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="erster_entwurf_export.SLDASM">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00367736459403007 -0.0240523604206181 -0.197645815978139"
+        rpy="0 0 0" />
+      <mass
+        value="0.267568794679023" />
+      <inertia
+        ixx="0.000172536697021039"
+        ixy="-4.91450498876181E-10"
+        ixz="-1.25412073222717E-10"
+        iyy="0.000156796684086418"
+        iyz="-2.42962094320955E-05"
+        izz="3.42943685631157E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://erster_entwurf_export.SLDASM/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://erster_entwurf_export.SLDASM/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Thigh_Link_1">
+    <inertial>
+      <origin
+        xyz="-0.130571792639433 0.0897317880581723 -0.119009694656217"
+        rpy="0 0 0" />
+      <mass
+        value="0.25524656668112" />
+      <inertia
+        ixx="4.92561075499815E-05"
+        ixy="7.26200548522277E-06"
+        ixz="-2.45634074410601E-05"
+        iyy="8.94373006181934E-05"
+        iyz="7.285038495074E-06"
+        izz="5.74145685002066E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://erster_entwurf_export.SLDASM/meshes/Thigh_Link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://erster_entwurf_export.SLDASM/meshes/Thigh_Link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Thigh_Joint_1"
+    type="fixed">
+    <origin
+      xyz="0.012077 -0.16327 -0.018706"
+      rpy="1.2766 -0.2147 -0.75557" />
+    <parent
+      link="base_link" />
+    <child
+      link="Thigh_Link_1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Legs_Connector_Link">
+    <inertial>
+      <origin
+        xyz="0.1 0 1.73472347597681E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.123307511449196" />
+      <inertia
+        ixx="1.54134389311495E-06"
+        ixy="-1.19143916456915E-37"
+        ixz="1.18119126616486E-37"
+        iyy="0.000411795710110543"
+        iyz="0"
+        izz="0.000411795710110543" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://erster_entwurf_export.SLDASM/meshes/Legs_Connector_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://erster_entwurf_export.SLDASM/meshes/Legs_Connector_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Legs_Connector_Joint"
+    type="fixed">
+    <origin
+      xyz="-0.10883 0.081679 -0.076595"
+      rpy="0.40863 0.77709 0.070761" />
+    <parent
+      link="Thigh_Link_1" />
+    <child
+      link="Legs_Connector_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Thigh_Link_2">
+    <inertial>
+      <origin
+        xyz="-0.0971721774898985 0.00270615193922957 0.0319635960684162"
+        rpy="0 0 0" />
+      <mass
+        value="0.255246557697921" />
+      <inertia
+        ixx="4.92561186430528E-05"
+        ixy="7.26202829669101E-06"
+        ixz="-2.45634047741869E-05"
+        iyy="8.94372968719048E-05"
+        iyz="7.28503529499963E-06"
+        izz="5.74145815875823E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://erster_entwurf_export.SLDASM/meshes/Thigh_Link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://erster_entwurf_export.SLDASM/meshes/Thigh_Link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Thigh_Joint_2"
+    type="continuous">
+    <origin
+      xyz="0.093929 0 0"
+      rpy="0.21718 -0.75848 2.9399" />
+    <parent
+      link="Legs_Connector_Link" />
+    <child
+      link="Thigh_Link_2" />
+    <axis
+      xyz="0.71117 0.050408 -0.70121" />
+  </joint>
+  <link
+    name="Lower_Link">
+    <inertial>
+      <origin
+        xyz="-0.0920683860007868 0.0638354883970177 0.0249863311514335"
+        rpy="0 0 0" />
+      <mass
+        value="0.267567565599642" />
+      <inertia
+        ixx="0.000145970029728695"
+        ixy="4.51635100328013E-05"
+        ixz="-2.36970450841237E-05"
+        iyy="6.64098811679096E-05"
+        iyz="3.81765063528081E-05"
+        izz="0.000151247677981681" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://erster_entwurf_export.SLDASM/meshes/Lower_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://erster_entwurf_export.SLDASM/meshes/Lower_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Lower_Joint"
+    type="revolute">
+    <origin
+      xyz="-0.1015 0.020246 -0.080081"
+      rpy="-0.21042 0.0069665 0.20747" />
+    <parent
+      link="Thigh_Link_2" />
+    <child
+      link="Lower_Link" />
+    <axis
+      xyz="0.71117 0.050408 -0.70121" />
+    <limit
+      lower="-1.0047"
+      upper="0.56606"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>
