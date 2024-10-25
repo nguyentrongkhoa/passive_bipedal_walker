@@ -2,6 +2,7 @@
 
   <compiler angle="radian"/>
   <option timestep="0.01" gravity="0 0 -9.81"/>
+  <compiler meshdir="../meshes/"/>
 
   <asset>
     <mesh name="base_link" file="base_link.STL"/>
