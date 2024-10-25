@@ -1,1 +1,0 @@
-This folder contains the urdf of the assembly. This urdf file will subsequently be used for simulation purposes in MuJoCo
