@@ -15,17 +15,7 @@
   </asset>
 
   <worldbody>
-    <!-- Light -->
-    <light name="top" pos="0 0 10"/>
-
-    <!-- Ground -->
-    <geom name="ground" type="plane" size="10 10 0.1" rgba="0.8 0.8 0.8 1"/>
-
-    <!-- Ramp -->
-    <body name="ramp" pos="0 0 0">
-        <geom name="ramp_geom" type="box" size="2.5 1 0.1" rgba="0.8 0.4 0.4 1" material="grid" euler="0 0.1 0"/>
-    </body>
-
+    
     <geom type="mesh" rgba="0.65098 0.619608 0.588235 1" mesh="base_link"/>
     <body name="thigh_link_1" pos="-0.0015 -0.011999 0.56702" quat="0.97383 0.227276 0 0">
       <inertial pos="0.0757707 1.3655e-09 0.0929091" quat="0.499662 0.499662 0.500338 0.500338" mass="0.633801" diaginertia="0.00452005 0.00418123 0.000367904"/>
