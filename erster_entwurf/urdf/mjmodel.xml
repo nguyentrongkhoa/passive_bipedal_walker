@@ -1,0 +1,43 @@
+<mujoco model="erster_entwurf">
+
+  <compiler angle="radian"/>
+  <option timestep="0.01" gravity="0 0 -9.81"/>
+
+  <asset>
+    <mesh name="base_link" file="base_link.STL"/>
+    <mesh name="thigh_link_1" file="thigh_link_1.STL"/>
+    <mesh name="connector_link" file="connector_link.STL"/>
+    <mesh name="thigh_link_2" file="thigh_link_2.STL"/>
+    <mesh name="lower_link" file="lower_link.STL"/>
+
+    <texture name="grid" type="2d" builtin="checker" width="512" height="512" rgb1="0.9 0.9 0.9" rgb2="0.1 0.1 0.1"/>
+    <material name="grid" texture="grid" texrepeat="1 1" specular="0.3" shininess="0.1"/>
+  </asset>
+
+  <worldbody>
+    <!-- Light -->
+    <light name="top" pos="0 0 10"/>
+
+    <!-- Ground -->
+    <geom name="ground" type="plane" size="10 10 0.1" rgba="0.8 0.8 0.8 1"/>
+
+    <!-- Ramp -->
+    <body name="ramp" pos="0 0 0">
+        <geom name="ramp_geom" type="box" size="2.5 1 0.1" rgba="0.8 0.4 0.4 1" material="grid" euler="0 0.1 0"/>
+    </body>
+
+    <geom type="mesh" rgba="0.65098 0.619608 0.588235 1" mesh="base_link"/>
+    <body name="thigh_link_1" pos="-0.0015 -0.011999 0.56702" quat="0.97383 0.227276 0 0">
+      <inertial pos="0.0757707 1.3655e-09 0.0929091" quat="0.499662 0.499662 0.500338 0.500338" mass="0.633801" diaginertia="0.00452005 0.00418123 0.000367904"/>
+      <joint name="thigh_joint_1" pos="0 0 0" axis="-1 0 0"/>
+      <geom type="mesh" rgba="0.65098 0.619608 0.588235 1" mesh="thigh_link_1"/>
+      <geom pos="0.17577 0 0.13" quat="1 0 0 0" type="mesh" rgba="0.65098 0.619608 0.588235 1" mesh="connector_link"/>
+      <geom pos="0.177542 0 0" quat="1 0 0 0" type="mesh" rgba="0.65098 0.619608 0.588235 1" mesh="thigh_link_2"/>
+      <body name="lower_link" pos="0.177542 0 0">
+        <inertial pos="-0.0130539 -0.00885514 -0.0820533" quat="0.996918 -0.0784512 -8.66029e-07 -2.04383e-05" mass="0.267568" diaginertia="0.000172537 0.00016144 2.96513e-05"/>
+        <joint name="lower_joint" pos="0 0 0" axis="1 0 0"/>
+        <geom type="mesh" rgba="0.65098 0.619608 0.588235 1" mesh="lower_link"/>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>
