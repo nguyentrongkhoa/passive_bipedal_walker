@@ -270,14 +270,5 @@
 <joint name="world=" type="continuous">  
     <parent link="world"/>  
      <child link="base_link"/>  
-< /joint>
-<visual>
-   <origin xyz="0 0 0" rpy="0 0 0" />
-   <geometry>
-   <box size="100 100 0.5" />
-   </geometry>
-  <material name="Cyan">
-  <color rgba="1.0 1.0 1.0 1.0"/>
-  </material>
-   </visual>
+</joint>
 </robot>
