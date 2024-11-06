@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="erster_entwurf">
+  <link name="world"/>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0 0 2"
+        rpy="0 0 0" />
+      <mass
+        value="0.267569070401216" />
+      <inertia
+        ixx="0.000172536724393951"
+        ixy="-4.59106713126127E-10"
+        ixz="-2.17267395122548E-10"
+        iyy="0.000161431716131306"
+        iyz="1.0118448030555E-06"
+        izz="2.96593847131024E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://erster_entwurf/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://erster_entwurf/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="thigh_link_1">
+    <inertial>
+      <origin
+        xyz="-0.00953945791134029 -0.000129062991743527 0.0839499793115811"
+        rpy="0 0 0" />
+      <mass
+        value="0.25524657446684" />
+      <inertia
+        ixx="7.78739221155232E-05"
+        ixy="4.02865801707096E-10"
+        ixz="-3.95323831127016E-06"
+        iyy="9.11682657457718E-05"
+        iyz="2.77858621837004E-07"
+        izz="2.706581153651E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://erster_entwurf/meshes/thigh_link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://erster_entwurf/meshes/thigh_link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="thigh_joint_1"
+    type="revolute">
+    <origin
+      xyz="-0.0015 -0.011999 0.16702"
+      rpy="0.45856 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="thigh_link_1" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="connector_link">
+    <inertial>
+      <origin
+        xyz="-0.1 3.46944695195361E-17 -1.27502175484295E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.123307511449196" />
+      <inertia
+        ixx="1.54134389311495E-06"
+        ixy="-4.79350452801533E-38"
+        ixz="1.60778208521315E-37"
+        iyy="0.000411795710110543"
+        iyz="0"
+        izz="0.000411795710110543" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://erster_entwurf/meshes/connector_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://erster_entwurf/meshes/connector_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="connector_joint"
+    type="fixed">
+    <origin
+      xyz="0.17577 0 0.13"
+      rpy="0 0 0" />
+    <parent
+      link="thigh_link_1" />
+    <child
+      link="connector_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="thigh_link_2">
+    <inertial>
+      <origin
+        xyz="-0.0164605420028372 0.000129066384933044 0.0839499790240118"
+        rpy="0 0 0" />
+      <mass
+        value="0.25524656944688" />
+      <inertia
+        ixx="7.78739206764643E-05"
+        ixy="3.9246857771927E-10"
+        ixz="3.95323798701744E-06"
+        iyy="9.11682648928613E-05"
+        iyz="-2.77848228072881E-07"
+        izz="2.70658110891737E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://erster_entwurf/meshes/thigh_link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://erster_entwurf/meshes/thigh_link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="thigh_joint_2"
+    type="fixed">
+    <origin
+      xyz="0.0017718 0 -0.13"
+      rpy="0 0 0" />
+    <parent
+      link="connector_link" />
+    <child
+      link="thigh_link_2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="lower_link">
+    <inertial>
+      <origin
+        xyz="-0.0130539226356477 -0.00885513535772918 -0.0820532781324108"
+        rpy="0 0 0" />
+      <mass
+        value="0.267567622452129" />
+      <inertia
+        ixx="0.000172536649282375"
+        ixy="-4.81211750953558E-10"
+        ixz="-1.37917356646175E-10"
+        iyy="0.00015821524648614"
+        iyz="-2.03604488347275E-05"
+        izz="3.28757283872742E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://erster_entwurf/meshes/lower_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://erster_entwurf/meshes/lower_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lower_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="thigh_link_2" />
+    <child
+      link="lower_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <joint name="world=" type="continuous">  
+    <parent link="world"/>  
+    <child link="base_link"/>  
+  </joint>
+</robot>

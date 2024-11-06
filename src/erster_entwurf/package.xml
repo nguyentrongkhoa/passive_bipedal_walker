@@ -1,0 +1,28 @@
+<package format="2">
+  <name>erster_entwurf</name>
+  <version>1.0.0</version>
+  <description>
+    <p>URDF Description package for erster_entwurf</p>
+    <p>This package contains configuration data, 3D models and launch files
+for erster_entwurf robot</p>
+  </description>
+  <author>TODO</author>
+  <maintainer email="khoa190602gmail.com" />
+  <license>BSD</license>
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <depend>ros2launch</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>rviz</depend>
+  <depend>joint_state_publisher_gui</depend>
+  <depend>gazebo</depend>
+  
+  <export>
+    <architecture_independent />
+  </export>
+</package>
