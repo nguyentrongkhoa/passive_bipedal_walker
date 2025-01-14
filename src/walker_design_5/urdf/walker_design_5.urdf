@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="walker_design_5">
+  <link
+    name="hip_link">
+    <inertial>
+      <origin
+        xyz="-1.3878E-17 5.5511E-17 0.00036588"
+        rpy="0 0 0" />
+      <mass
+        value="0.023249" />
+      <inertia
+        ixx="5.1362E-07"
+        ixy="2.7396E-21"
+        ixz="-2.7818E-21"
+        iyy="1.8805E-05"
+        iyz="-1.6411E-21"
+        izz="1.8752E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://walker_design_5/meshes/hip_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://walker_design_5/meshes/hip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_leg_link">
+    <inertial>
+      <origin
+        xyz="-0.0053966 0.028086 -0.35902"
+        rpy="0 0 0" />
+      <mass
+        value="0.51157" />
+      <inertia
+        ixx="0.00049543"
+        ixy="4.1393E-08"
+        ixz="3.0629E-05"
+        iyy="0.00048163"
+        iyz="5.26E-07"
+        izz="0.00083144" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://walker_design_5/meshes/left_leg_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://walker_design_5/meshes/left_leg_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hip_joint"
+    type="revolute">
+    <origin
+      xyz="-0.05 0 4.0123E-05"
+      rpy="0 0 0" />
+    <parent
+      link="hip_link" />
+    <child
+      link="left_leg_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-2"
+      upper="2"
+      effort="100000"
+      velocity="100" />
+  </joint>
+  <link
+    name="right_leg_link">
+    <inertial>
+      <origin
+        xyz="0.0048563 0.028736 -0.35902"
+        rpy="0 0 0" />
+      <mass
+        value="0.51157" />
+      <inertia
+        ixx="0.00049545"
+        ixy="5.4691E-08"
+        ixz="-3.0645E-05"
+        iyy="0.00048164"
+        iyz="-2.9571E-07"
+        izz="0.00083146" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://walker_design_5/meshes/right_leg_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://walker_design_5/meshes/right_leg_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hip_joint"
+    type="revolute">
+    <origin
+      xyz="0.05 0 4.0123E-05"
+      rpy="-0.48379 0 0" />
+    <parent
+      link="hip_link" />
+    <child
+      link="right_leg_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-2"
+      upper="2"
+      effort="100000"
+      velocity="100" />
+  </joint>
+</robot>
