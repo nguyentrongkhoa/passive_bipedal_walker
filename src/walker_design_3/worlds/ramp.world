@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <world name="default">
+
+    <!-- NOTE: loading gazebo_ros_state in the launch file by using -s libgazebo_ros_state.so
+               does not work so this is the only way -->
+    <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+      <ros>
+        <namespace>/world</namespace>
+        <!--argument>model_states:=model_states_demo</argument -->
+      </ros>
+      <update_rate>0.8</update_rate>
+    </plugin>
+
+    <!-- Add sky -->
+    <scene>
+      <ambient>0.7 0.7 0.7 1</ambient>
+      <sky>
+        <clouds>
+          <speed>12</speed>
+        </clouds>
+      </sky>
+    </scene>
+
+    <!-- Set physics parameters -->
+    <physics type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_update_rate>300</real_time_update_rate>
+    </physics>
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Add ramp -->
+    <model name="ramp">
+      <static>true</static>
+      <pose>0 0 0 0 0 0</pose>
+      <link name="ramp_link">
+        <collision name="ramp_collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale> <!-- since Solidworks uses mm, while Gazebo uses m -->
+              <uri>/home/tom/.gazebo/models/ramp/meshes/ramp_2_deg.STL</uri> <!-- change this -->
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <bullet>
+                <mu>100</mu>  <!-- Static friction coefficient -->
+                <mu2>100</mu2>
+              </bullet>
+            </friction>
+          </surface>
+        </collision>
+        
+        <visual name="ramp_visual">
+          <material>
+            <ambient>1 0 0 1</ambient>
+          </material>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/tom/.gazebo/models/ramp/meshes/ramp_2_deg.STL</uri> <!-- change this -->
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Add fixed camera -->
+    <gui>
+      <camera name="my_camera">
+        <pose>5 5.5 0.6 0 0.07 -2.62</pose>
+      </camera>
+    </gui>
+
+  </world>
+</sdf>

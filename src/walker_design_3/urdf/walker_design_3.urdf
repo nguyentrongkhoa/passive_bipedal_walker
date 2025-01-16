@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="walker_design_3">
+  <link
+    name="left_foot_link">
+    <inertial>
+      <origin
+        xyz="-0.033016 -0.020113 0.1804"
+        rpy="0 0 0" />
+      <mass
+        value="0.26156" />
+      <inertia
+        ixx="0.00027102"
+        ixy="3.9882E-08"
+        ixz="-9.656E-07"
+        iyy="0.00019908"
+        iyz="5.8183E-07"
+        izz="0.00021774" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://walker_design_3/meshes/left_foot_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://walker_design_3/meshes/left_foot_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_hip_link">
+    <inertial>
+      <origin
+        xyz="0.03 1.3201E-13 -3.5527E-15"
+        rpy="0 0 0" />
+      <mass
+        value="0.022224" />
+      <inertia
+        ixx="4.5558E-07"
+        ixy="1.5657E-20"
+        ixz="-1.0489E-19"
+        iyy="1.8747E-05"
+        iyz="4.7646E-21"
+        izz="1.8747E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://walker_design_3/meshes/left_hip_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://walker_design_3/meshes/left_hip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hip_joint"
+    type="revolute">
+    <origin
+      xyz="-0.018882 -0.035898 0.45353"
+      rpy="0 0 0" />
+    <parent
+      link="left_foot_link" />
+    <child
+      link="left_hip_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_foot_link">
+    <inertial>
+      <origin
+        xyz="0.014142 0.015991 -0.27313"
+        rpy="0 0 0" />
+      <mass
+        value="0.26156" />
+      <inertia
+        ixx="0.00027102"
+        ixy="3.9326E-08"
+        ixz="9.6003E-07"
+        iyy="0.00019908"
+        iyz="-3.1864E-07"
+        izz="0.00021774" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://walker_design_3/meshes/right_foot_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://walker_design_3/meshes/right_foot_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hip_joint"
+    type="revolute">
+    <origin
+      xyz="0.06 0 0"
+      rpy="-0.48379 0 0" />
+    <parent
+      link="left_hip_link" />
+    <child
+      link="right_foot_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <!-- add dummy link -->
+  <!-- copy this when use as a template-->
+  <link name="dummy_link"/>
+  <joint name="dummy_to_base_joint" type="fixed">  
+    <parent link="dummy_link"/>  
+    <child link="left_foot_link"/>  
+  </joint>
+</robot>
