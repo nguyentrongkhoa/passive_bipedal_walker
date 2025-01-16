@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <world name="default_world">
+    <!-- Include ground plane and sun -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Ramp Model -->
+    <model name="ramp">
+      <static>true</static>
+      <link name="ramp_link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>5 2 0.1</size> <!-- Length, Width, Height of the ramp -->
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>5 5 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Red</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <!-- Pose: Rotate about Y-axis to create 5-degree incline -->
+      <pose>0 0 0.4 -0.0872665 0 0</pose> <!-- 5 degrees in radians = 0.0872665 -->
+    </model>
+  </world>
+</sdf>
